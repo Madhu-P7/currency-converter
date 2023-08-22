@@ -1,0 +1,14 @@
+const convertButton = document.getElementById("convert-btn");
+const usdInput = document.getElementById("usd");
+const resultElement = document.getElementById("result");
+
+convertButton.addEventListener("click", () => {
+    const usdAmount = parseFloat(usdInput.value);
+    if (!isNaN(usdAmount)) {
+        const exchangeRate = 82.97; // Example exchange rate (1 USD to INR)
+        const inrAmount = usdAmount * exchangeRate;
+        resultElement.textContent = `${usdAmount.toFixed(2)} USD is approximately ${inrAmount.toFixed(2)} INR`;
+    } else {
+        resultElement.textContent = "Please enter a valid USD amount.";
+    }
+});
